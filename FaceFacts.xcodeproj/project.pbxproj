@@ -11,6 +11,8 @@
 		9E5681FE2B5731A400509688 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5681FD2B5731A400509688 /* ContentView.swift */; };
 		9E5682002B5731A600509688 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E5681FF2B5731A600509688 /* Assets.xcassets */; };
 		9E5682032B5731A600509688 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E5682022B5731A600509688 /* Preview Assets.xcassets */; };
+		9E56820A2B57323300509688 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5682092B57323300509688 /* Person.swift */; };
+		9E56820E2B57753100509688 /* EditPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E56820D2B57753100509688 /* EditPersonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		9E5681FD2B5731A400509688 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9E5681FF2B5731A600509688 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E5682022B5731A600509688 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9E5682092B57323300509688 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		9E56820D2B57753100509688 /* EditPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPersonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +57,10 @@
 			children = (
 				9E5681FB2B5731A400509688 /* FaceFactsApp.swift */,
 				9E5681FD2B5731A400509688 /* ContentView.swift */,
+				9E5682092B57323300509688 /* Person.swift */,
 				9E5681FF2B5731A600509688 /* Assets.xcassets */,
 				9E5682012B5731A600509688 /* Preview Content */,
+				9E56820D2B57753100509688 /* EditPersonView.swift */,
 			);
 			path = FaceFacts;
 			sourceTree = "<group>";
@@ -137,8 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E56820A2B57323300509688 /* Person.swift in Sources */,
 				9E5681FE2B5731A400509688 /* ContentView.swift in Sources */,
 				9E5681FC2B5731A400509688 /* FaceFactsApp.swift in Sources */,
+				9E56820E2B57753100509688 /* EditPersonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
