@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct EditPersonView: View {
     @Bindable var person: Person
@@ -30,6 +31,15 @@ struct EditPersonView: View {
     }
 }
 
-//#Preview {
-//    EditPersonView()
-//}
+#Preview {
+    do {
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        let container = try ModelContainer(for: Person.self, configurations: config)
+        var person = Person(name: "Karan", emailAddress: "karan@gmail.com", details: "some details")
+        return EditPersonView(person: person)
+            .modelContainer(container)
+
+    } catch {
+        fatalError("Failed to create model container")
+    }
+}
