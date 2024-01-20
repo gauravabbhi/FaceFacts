@@ -40,5 +40,31 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    
+    do {
+        let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
+        let container = try ModelContainer(for: Person.self, configurations: configuration)
+        let context = container.mainContext
+       
+        let personsData = [
+                ("Karan", "karan@gmail.com", "some details"),
+                ("Gaurav", "gaurav@gmail.com", "some details"),
+                ("Rishab", "rishab@gmail.com", "some details")
+            ]
+            
+            var persons: [Person] = []
+
+            for data in personsData {
+                let person = Person(name: data.0, emailAddress: data.1, details: data.2)
+                context.insert(person)
+                persons.append(person)
+            }
+        
+        
+        return ContentView()
+            .modelContainer(container)
+    } catch {
+        fatalError("Something went wrong")
+    }
+    
 }
