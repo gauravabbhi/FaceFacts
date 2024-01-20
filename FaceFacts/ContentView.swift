@@ -28,10 +28,11 @@ struct ContentView: View {
                     }
                 })
             }
+            .onAppear(perform: renderSampleData)
             .navigationTitle("Face Facts")
             .navigationDestination(for: Person.self) { person in
-                                EditPersonView(person: person)
-                            }
+                EditPersonView(person: person)
+            }
             .toolbar {
                 Button("Add Person", systemImage: "plus", action: addPerson)
             }
@@ -43,6 +44,24 @@ struct ContentView: View {
         modelContext.insert(person)
         path.append(person)
     }
+    
+    private func renderSampleData(){
+        if people.isEmpty {
+            let personsData = [
+                ("Karan", "karan@gmail.com", "some details"),
+                ("Gaurav", "gaurav@gmail.com", "some details"),
+                ("Rishab", "rishab@gmail.com", "some details")
+            ]
+            
+            var persons: [Person] = []
+            
+            for data in personsData {
+                let person = Person(name: data.0, emailAddress: data.1, details: data.2)
+                modelContext.insert(person)
+                persons.append(person)
+            }
+        }
+    }
 }
 
 #Preview {
@@ -51,20 +70,20 @@ struct ContentView: View {
         let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: Person.self, configurations: configuration)
         let context = container.mainContext
-       
+        
         let personsData = [
-                ("Karan", "karan@gmail.com", "some details"),
-                ("Gaurav", "gaurav@gmail.com", "some details"),
-                ("Rishab", "rishab@gmail.com", "some details")
-            ]
-            
-            var persons: [Person] = []
-
-            for data in personsData {
-                let person = Person(name: data.0, emailAddress: data.1, details: data.2)
-                context.insert(person)
-                persons.append(person)
-            }
+            ("Karan", "karan@gmail.com", "some details"),
+            ("Gaurav", "gaurav@gmail.com", "some details"),
+            ("Rishab", "rishab@gmail.com", "some details")
+        ]
+        
+        var persons: [Person] = []
+        
+        for data in personsData {
+            let person = Person(name: data.0, emailAddress: data.1, details: data.2)
+            context.insert(person)
+            persons.append(person)
+        }
         
         
         return ContentView()
