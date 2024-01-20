@@ -21,6 +21,12 @@ struct ContentView: View {
                         Text(person.name)
                     }
                 }
+                .onDelete(perform: { indexSet in
+                    for index in indexSet {
+                        let row = people[index]
+                        modelContext.delete(row)
+                    }
+                })
             }
             .navigationTitle("Face Facts")
             .navigationDestination(for: Person.self) { person in
